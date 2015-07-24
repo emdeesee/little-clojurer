@@ -9,6 +9,7 @@
       :else (cons (first lat) (rember a (rest lat))))))
 
 (def trember
+  "Like rember, but tail-recursive."
   (fn [a lat]
     (loop [lat lat result '()]
       (cond
