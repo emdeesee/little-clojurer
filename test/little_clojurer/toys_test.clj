@@ -1,4 +1,4 @@
-(ns little-clojurer.test-toys
+(ns little-clojurer.toys-test
   (:require [clojure.test :refer :all]
             [little-clojurer.idiom :refer :all]))
 

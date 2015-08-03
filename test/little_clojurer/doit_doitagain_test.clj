@@ -1,4 +1,4 @@
-(ns little-clojurer.test-doit-doitagain
+(ns little-clojurer.doit-doitagain-test
   (:require [clojure.test :refer :all]
             [little-clojurer.doit-doitagain :refer :all]))
 
