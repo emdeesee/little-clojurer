@@ -22,4 +22,9 @@
   (let [a 'cup
         lat '(coffee cup tea cup and hick cup)
         expect '(coffee tea cup and hick cup)]
-   (is (= expect (rember a lat)))))
+    (is (= expect (rember a lat))))
+
+  (let [a 'sauce
+        lat '(soy sauce and tomato sauce)
+        expect '(soy and tomato sauce)]
+    (is (= expect (rember a lat)))))
