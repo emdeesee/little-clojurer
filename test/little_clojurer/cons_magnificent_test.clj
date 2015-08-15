@@ -3,12 +3,12 @@
             [little-clojurer.cons-magnificent :refer :all]))
 
 (deftest test-rember
-  
+
   (let [a 'mint
         lat '(lamb chops with mint jelly)
         expect '(lamb chops with jelly)]
     (is (= expect (rember a lat))))
-  
+
   (let [a 'mint
         lat '(lamb chops with mint flavored mint jelly)
         expect '(lamb chops with flavored mint jelly)]
