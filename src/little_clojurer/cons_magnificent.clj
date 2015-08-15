@@ -8,6 +8,12 @@
       (= a (first lat)) (rest lat)
       :else (cons (first lat) (rember a (rest lat))))))
 
+(def firsts
+  (fn [l]
+    (cond
+      (null? l) (quote ())
+      :else (cons (first (first l)) (firsts (rest l))))))
+
 (def insertR
   (fn [new old lat]
     (cond
