@@ -96,3 +96,18 @@
         lat '(a b c d f g d h)
         expect '(a b c e d f g d h)]
     (is (= expect (insertL new old lat)))))
+
+(deftest test-subst
+  (let [new 'topping
+        old 'fudge
+        lat '(ice cream with fudge for dessert)
+        expect '(ice cream with topping for dessert)]
+    (is (= expect (subst new old lat)))))
+
+(deftest test-subst2
+  (let [new 'vanilla
+        o1 'chocolate
+        o2 'banana
+        lat '(banana ice cream with chocolate topping)
+        expect '(vanilla ice cream with chocolate topping)]
+    (is (= expect (subst2 new o1 o2 lat)))))

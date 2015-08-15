@@ -27,3 +27,17 @@
       (null? lat) (quote ())
       (= old (first lat)) (cons new lat)
       :else (cons (first lat) (insertL new old (rest lat))))))
+
+(def subst
+  (fn [new old lat]
+    (cond
+      (null? lat) (quote ())
+      (= old (first lat)) (cons new (rest lat))
+      :else (cons (first lat) (subst new old (rest lat))))))
+
+(def subst2
+  (fn [new o1 o2 lat]
+    (cond
+      (null? lat) (quote ())
+      (or (= o1 (first lat)) (= o2 (first lat))) (cons new (rest lat))
+      :else (cons (first lat) (subst new o1 o2 lat)))))
