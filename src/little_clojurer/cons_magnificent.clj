@@ -18,5 +18,12 @@
   (fn [new old lat]
     (cond
       (null? lat) (quote ())
-      (= old (first lat)) (cons (first lat) (cons new (rest lat)))
+      (= old (first lat)) (cons old (cons new (rest lat)))
       :else (cons (first lat) (insertR new old (rest lat))))))
+
+(def insertL
+  (fn [new old lat]
+    (cond
+      (null? lat) (quote ())
+      (= old (first lat)) (cons new lat)
+      :else (cons (first lat) (insertL new old (rest lat))))))

@@ -56,3 +56,43 @@
             ((no) more))
         expect '((five plums) eleven (no))]
     (is (= expect (firsts l)))))
+
+(deftest test-insertR
+
+  (let [new 'topping
+        old 'fudge
+        lat '(ice cream with fudge for dessert)
+        expect '(ice cream with fudge topping for dessert)]
+    (is (= expect (insertR new old lat))))
+
+  (let [new 'jalapeño
+        old 'and
+        lat '(tacos tamales and salsa)
+        expect '(tacos tamales and jalapeño salsa)]
+    (is (= expect (insertR new old lat))))
+
+  (let [new 'e
+        old 'd
+        lat '(a b c d f g d h)
+        expect '(a b c d e f g d h)]
+    (is (= expect (insertR new old lat)))))
+
+(deftest test-insertL
+
+  (let [new 'fudge
+        old 'topping
+        lat '(ice cream with topping for dessert)
+        expect '(ice cream with fudge topping for dessert)]
+    (is (= expect (insertL new old lat))))
+
+  (let [new 'jalapeño
+        old 'salsa
+        lat '(tacos tamales and salsa)
+        expect '(tacos tamales and jalapeño salsa)]
+    (is (= expect (insertL new old lat))))
+
+  (let [new 'e
+        old 'd
+        lat '(a b c d f g d h)
+        expect '(a b c e d f g d h)]
+    (is (= expect (insertL new old lat)))))
